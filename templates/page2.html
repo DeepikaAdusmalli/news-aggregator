@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Signup</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css" integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous">
+    <style>
+        *{
+            font-family: Arial, Helvetica, sans-serif;
+        }
+        body {
+            background-image: url('https://img.freepik.com/free-vector/colorful-abstract-background_23-2148464915.jpg');
+            background-size: cover;
+            text-align: center;
+        }
+        .bgcol{
+            color:whitesmoke;
+            font-weight: bold;
+        }
+        .btnstyle{
+            background-color: skyblue;
+            color:black;
+            padding:10px;
+            border-radius: 8px;
+            border:none;
+            margin: 10px;
+            cursor: pointer;
+            font-weight: bold;
+        }
+        .btnform{
+            margin-left: 10px;
+            margin-top: 80px;
+        }
+        .one{
+            padding: 8px;
+            border-radius: 8px;
+            border:none;
+            margin: 10px;
+            cursor: pointer;
+            font-weight: bold;
+        }
+    </style>
+</head>
+{% with messages = get_flashed_messages() %}
+  {% if messages %}
+     {% for message in messages %}
+      <center><b>{{ message }}</b></center>
+    {% endfor %}
+  {% endif %}
+{% endwith %}
+<body>
+    <form class="btnform" method="POST" >     
+            <h1 class="bgcol">Signup</h1>
+            <label class="bgcol">Full Name</label>
+            <p><input placeholder="Enter Full Name" type="text" name="username" class="one" required/></p>
+            <label class="bgcol">Mobile</label>
+            <p><input placeholder="Enter your mobile number" type="number" name="mobile" class="one" required/></p>
+            <label class="bgcol">Email</label>
+            <p><input placeholder="Enter your Gmail" type="email" name="email" class="one" required/></p>
+            <label class="bgcol">Password:</label>
+            <p><input placeholder="Enter password" type="text" name="password" class="one" required/></p>
+            <button  class="btnstyle">Signup</button>
+            <a href="{{url_for('loginpage')}}"  class="bgcol">Already Have an Account?</a>
+    </form>
+    <div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-Fy6S3B9q64WdZWQUiU+q4/2Lc9npb8tCaSX9FK7E8HnRr0Jz8D6OP9dO5Vg3Q9ct" crossorigin="anonymous"></script>
+</body>
+</html>
